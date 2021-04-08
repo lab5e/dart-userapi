@@ -1,0 +1,4 @@
+git-push.sh
+.dart_tool
+.packages
+pubspec.lock
