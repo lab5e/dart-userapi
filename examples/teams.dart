@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 
 // A very simple example that pulls the user profile from api.lab5e.com and
 // displays it on screen.
