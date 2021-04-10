@@ -10,7 +10,6 @@
 import 'package:lab5e/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for TeamsApi
 void main() {
   final instance = TeamsApi();
@@ -133,6 +132,5 @@ void main() {
     test('test userUpdateTeam', () async {
       // TODO
     });
-
   });
 }

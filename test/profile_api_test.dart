@@ -10,7 +10,6 @@
 import 'package:lab5e/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for ProfileApi
 void main() {
   final instance = ProfileApi();
@@ -24,6 +23,5 @@ void main() {
     test('test userGetUserProfile', () async {
       // TODO
     });
-
   });
 }

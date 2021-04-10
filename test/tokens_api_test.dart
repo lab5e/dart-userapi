@@ -10,7 +10,6 @@
 import 'package:lab5e/api.dart';
 import 'package:test/test.dart';
 
-
 /// tests for TokensApi
 void main() {
   final instance = TokensApi();
@@ -50,6 +49,5 @@ void main() {
     test('test userUpdateToken', () async {
       // TODO
     });
-
   });
 }
