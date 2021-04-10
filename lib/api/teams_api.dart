@@ -9,6 +9,7 @@
 
 part of userapi;
 
+
 class TeamsApi {
   TeamsApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
@@ -23,11 +24,10 @@ class TeamsApi {
   /// Parameters:
   ///
   /// * [AcceptInviteRequest] body (required):
-  Future<Response> userAcceptInviteWithHttpInfo(
-      AcceptInviteRequest body) async {
+  Future<Response> userAcceptInviteWithHttpInfo(AcceptInviteRequest body) async {
     // Verify required params are set.
     if (body == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
     }
 
     final path = r'/user/teams/accept';
@@ -39,18 +39,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>['application/json'];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -81,7 +83,7 @@ class TeamsApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       return apiClient.deserialize(_decodeBodyBytes(response), 'Team') as Team;
-    }
+        }
     return Future<Team>.value(null);
   }
 
@@ -95,7 +97,7 @@ class TeamsApi {
   Future<Response> userCreateTeamWithHttpInfo(Team body) async {
     // Verify required params are set.
     if (body == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
     }
 
     final path = r'/user/teams';
@@ -107,18 +109,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>['application/json'];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -147,7 +151,7 @@ class TeamsApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       return apiClient.deserialize(_decodeBodyBytes(response), 'Team') as Team;
-    }
+        }
     return Future<Team>.value(null);
   }
 
@@ -164,20 +168,18 @@ class TeamsApi {
   ///
   /// * [String] code (required):
   ///   The invite code.
-  Future<Response> userDeleteInviteWithHttpInfo(
-      String teamId, String code) async {
+  Future<Response> userDeleteInviteWithHttpInfo(String teamId, String code) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (code == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: code');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: code');
     }
 
     final path = r'/user/teams/{teamId}/invites/{code}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString())
-        .replaceAll('{' + 'code' + '}', code.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString())
+      .replaceAll('{' + 'code' + '}', code.toString());
 
     Object postBody;
 
@@ -186,18 +188,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -231,9 +235,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Object')
-          as Object;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Object') as Object;
+        }
     return Future<Object>.value(null);
   }
 
@@ -250,21 +253,18 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///   The user ID
-  Future<Response> userDeleteMemberWithHttpInfo(
-      String teamId, String userId) async {
+  Future<Response> userDeleteMemberWithHttpInfo(String teamId, String userId) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (userId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: userId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: userId');
     }
 
     final path = r'/user/teams/{teamId}/members/{userId}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString())
-        .replaceAll('{' + 'userId' + '}', userId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString())
+      .replaceAll('{' + 'userId' + '}', userId.toString());
 
     Object postBody;
 
@@ -273,18 +273,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -318,9 +320,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Member')
-          as Member;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Member') as Member;
+        }
     return Future<Member>.value(null);
   }
 
@@ -337,12 +338,11 @@ class TeamsApi {
   Future<Response> userDeleteTeamWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
 
     final path = r'/user/teams/{teamId}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString());
 
     Object postBody;
 
@@ -351,18 +351,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -394,7 +396,7 @@ class TeamsApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       return apiClient.deserialize(_decodeBodyBytes(response), 'Team') as Team;
-    }
+        }
     return Future<Team>.value(null);
   }
 
@@ -410,19 +412,17 @@ class TeamsApi {
   ///   The team ID
   ///
   /// * [InviteRequest] body (required):
-  Future<Response> userGenerateInviteWithHttpInfo(
-      String teamId, InviteRequest body) async {
+  Future<Response> userGenerateInviteWithHttpInfo(String teamId, InviteRequest body) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (body == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
     }
 
     final path = r'/user/teams/{teamId}/invites'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString());
 
     Object postBody = body;
 
@@ -431,18 +431,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>['application/json'];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -475,9 +477,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Invite')
-          as Invite;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Invite') as Invite;
+        }
     return Future<Invite>.value(null);
   }
 
@@ -494,12 +495,11 @@ class TeamsApi {
   Future<Response> userListInvitesWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
 
     final path = r'/user/teams/{teamId}/invites'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString());
 
     Object postBody;
 
@@ -508,18 +508,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -550,9 +552,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'InviteList')
-          as InviteList;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'InviteList') as InviteList;
+        }
     return Future<InviteList>.value(null);
   }
 
@@ -571,18 +572,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -608,9 +611,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'TeamList')
-          as TeamList;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'TeamList') as TeamList;
+        }
     return Future<TeamList>.value(null);
   }
 
@@ -627,20 +629,18 @@ class TeamsApi {
   ///
   /// * [String] code (required):
   ///   The invite code.
-  Future<Response> userRetrieveInviteWithHttpInfo(
-      String teamId, String code) async {
+  Future<Response> userRetrieveInviteWithHttpInfo(String teamId, String code) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (code == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: code');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: code');
     }
 
     final path = r'/user/teams/{teamId}/invites/{code}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString())
-        .replaceAll('{' + 'code' + '}', code.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString())
+      .replaceAll('{' + 'code' + '}', code.toString());
 
     Object postBody;
 
@@ -649,18 +649,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -694,9 +696,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Invite')
-          as Invite;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Invite') as Invite;
+        }
     return Future<Invite>.value(null);
   }
 
@@ -711,21 +712,18 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///   The user ID
-  Future<Response> userRetrieveMemberWithHttpInfo(
-      String teamId, String userId) async {
+  Future<Response> userRetrieveMemberWithHttpInfo(String teamId, String userId) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (userId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: userId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: userId');
     }
 
     final path = r'/user/teams/{teamId}/members/{userId}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString())
-        .replaceAll('{' + 'userId' + '}', userId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString())
+      .replaceAll('{' + 'userId' + '}', userId.toString());
 
     Object postBody;
 
@@ -734,18 +732,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -777,9 +777,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Member')
-          as Member;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Member') as Member;
+        }
     return Future<Member>.value(null);
   }
 
@@ -794,12 +793,11 @@ class TeamsApi {
   Future<Response> userRetrieveTeamWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
 
     final path = r'/user/teams/{teamId}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString());
 
     Object postBody;
 
@@ -808,18 +806,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -849,7 +849,7 @@ class TeamsApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       return apiClient.deserialize(_decodeBodyBytes(response), 'Team') as Team;
-    }
+        }
     return Future<Team>.value(null);
   }
 
@@ -864,12 +864,11 @@ class TeamsApi {
   Future<Response> userRetrieveTeamMembersWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
 
     final path = r'/user/teams/{teamId}/members'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString());
 
     Object postBody;
 
@@ -878,18 +877,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -918,9 +919,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'MemberList')
-          as MemberList;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'MemberList') as MemberList;
+        }
     return Future<MemberList>.value(null);
   }
 
@@ -937,24 +937,21 @@ class TeamsApi {
   /// * [String] userId (required):
   ///
   /// * [Member] body (required):
-  Future<Response> userUpdateMemberWithHttpInfo(
-      String teamId, String userId, Member body) async {
+  Future<Response> userUpdateMemberWithHttpInfo(String teamId, String userId, Member body) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (userId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: userId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: userId');
     }
     if (body == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
     }
 
     final path = r'/user/teams/{teamId}/members/{userId}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString())
-        .replaceAll('{' + 'userId' + '}', userId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString())
+      .replaceAll('{' + 'userId' + '}', userId.toString());
 
     Object postBody = body;
 
@@ -963,18 +960,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>['application/json'];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -999,8 +998,7 @@ class TeamsApi {
   /// * [String] userId (required):
   ///
   /// * [Member] body (required):
-  Future<Member> userUpdateMember(
-      String teamId, String userId, Member body) async {
+  Future<Member> userUpdateMember(String teamId, String userId, Member body) async {
     final response = await userUpdateMemberWithHttpInfo(teamId, userId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -1009,9 +1007,8 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Member')
-          as Member;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'Member') as Member;
+        }
     return Future<Member>.value(null);
   }
 
@@ -1029,15 +1026,14 @@ class TeamsApi {
   Future<Response> userUpdateTeamWithHttpInfo(String teamId, Team body) async {
     // Verify required params are set.
     if (teamId == null) {
-      throw ApiException(
-          HttpStatus.badRequest, 'Missing required param: teamId');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
     }
     if (body == null) {
-      throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
+     throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
     }
 
     final path = r'/user/teams/{teamId}'
-        .replaceAll('{' + 'teamId' + '}', teamId.toString());
+      .replaceAll('{' + 'teamId' + '}', teamId.toString());
 
     Object postBody = body;
 
@@ -1046,18 +1042,20 @@ class TeamsApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>['application/json'];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -1090,7 +1088,7 @@ class TeamsApi {
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
       return apiClient.deserialize(_decodeBodyBytes(response), 'Team') as Team;
-    }
+        }
     return Future<Team>.value(null);
   }
 }
