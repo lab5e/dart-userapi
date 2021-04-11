@@ -1,8 +1,8 @@
-# lab5e.api.ProfileApi
+# userapi.api.ProfileApi
 
 ## Load the API package
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 ```
 
 All URIs are relative to *https://api.lab5e.com*
@@ -21,7 +21,7 @@ Show your user profile information
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed

@@ -1,8 +1,8 @@
-# lab5e.api.TeamsApi
+# userapi.api.TeamsApi
 
 ## Load the API package
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 ```
 
 All URIs are relative to *https://api.lab5e.com*
@@ -34,7 +34,7 @@ Accept an invite from another user. This will add the currently logged in user t
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -79,7 +79,7 @@ Create team
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -126,7 +126,7 @@ Delete an invite created earlier. You must be an administrator of the team to pe
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -175,7 +175,7 @@ Remove a member from the team. You must be an administrator to do this. You can'
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -224,7 +224,7 @@ Update the team. You must be an administrator of the team to edit it.
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -271,7 +271,7 @@ Update the team. You must be an administrator of the team to edit it.
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -320,7 +320,7 @@ Update the team. You must be an administrator of the team to edit it.
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -367,7 +367,7 @@ Update the team. You must be an administrator of the team to edit it.
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -410,7 +410,7 @@ Read a single invite from the team's set of non-redeemed invites.
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -457,7 +457,7 @@ Retrieve member
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -504,7 +504,7 @@ Retrieve team
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -549,7 +549,7 @@ List members
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -596,7 +596,7 @@ You must be an administrator of the team to update member settings
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -647,7 +647,7 @@ Update the team. You must be an administrator of the team to edit it.
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed

@@ -1,8 +1,8 @@
-# lab5e.model.Invite
+# userapi.model.Invite
 
 ## Load the model package
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 ```
 
 ## Properties

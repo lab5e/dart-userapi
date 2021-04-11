@@ -1,8 +1,8 @@
-# lab5e.api.TokensApi
+# userapi.api.TokensApi
 
 ## Load the API package
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 ```
 
 All URIs are relative to *https://api.lab5e.com*
@@ -23,7 +23,7 @@ Create token
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -68,7 +68,7 @@ Remove token
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -113,7 +113,7 @@ List tokens
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -154,7 +154,7 @@ Retrieve token
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -199,7 +199,7 @@ Update token
 
 ### Example 
 ```dart
-import 'package:lab5e/api.dart';
+import 'package:userapi/api.dart';
 // TODO Configure API key authorization: APIToken
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIToken').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
