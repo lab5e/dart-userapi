@@ -21,7 +21,7 @@ class TokensApi {
   /// Parameters:
   ///
   /// * [Token] body (required):
-  Future<Response> userCreateTokenWithHttpInfo(Token body) async {
+  Future<Response> createTokenWithHttpInfo(Token body) async {
     // Verify required params are set.
     if (body == null) {
       throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
@@ -66,8 +66,8 @@ class TokensApi {
   /// Parameters:
   ///
   /// * [Token] body (required):
-  Future<Token> userCreateToken(Token body) async {
-    final response = await userCreateTokenWithHttpInfo(body);
+  Future<Token> createToken(Token body) async {
+    final response = await createTokenWithHttpInfo(body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -89,7 +89,7 @@ class TokensApi {
   ///
   /// * [String] token (required):
   ///   The token to delete.
-  Future<Response> userDeleteTokenWithHttpInfo(String token) async {
+  Future<Response> deleteTokenWithHttpInfo(String token) async {
     // Verify required params are set.
     if (token == null) {
       throw ApiException(
@@ -137,8 +137,8 @@ class TokensApi {
   ///
   /// * [String] token (required):
   ///   The token to delete.
-  Future<Object> userDeleteToken(String token) async {
-    final response = await userDeleteTokenWithHttpInfo(token);
+  Future<DeleteTokenResponse> deleteToken(String token) async {
+    final response = await deleteTokenWithHttpInfo(token);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -146,16 +146,17 @@ class TokensApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Object')
-          as Object;
+      return apiClient.deserialize(
+              _decodeBodyBytes(response), 'DeleteTokenResponse')
+          as DeleteTokenResponse;
     }
-    return Future<Object>.value(null);
+    return Future<DeleteTokenResponse>.value(null);
   }
 
   /// List tokens
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> userListTokensWithHttpInfo() async {
+  Future<Response> listTokensWithHttpInfo() async {
     final path = r'/user/tokens';
 
     Object postBody;
@@ -191,8 +192,8 @@ class TokensApi {
   }
 
   /// List tokens
-  Future<TokenList> userListTokens() async {
-    final response = await userListTokensWithHttpInfo();
+  Future<TokenList> listTokens() async {
+    final response = await listTokensWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -213,7 +214,7 @@ class TokensApi {
   /// Parameters:
   ///
   /// * [String] token (required):
-  Future<Response> userRetrieveTokenWithHttpInfo(String token) async {
+  Future<Response> retrieveTokenWithHttpInfo(String token) async {
     // Verify required params are set.
     if (token == null) {
       throw ApiException(
@@ -260,8 +261,8 @@ class TokensApi {
   /// Parameters:
   ///
   /// * [String] token (required):
-  Future<Token> userRetrieveToken(String token) async {
-    final response = await userRetrieveTokenWithHttpInfo(token);
+  Future<Token> retrieveToken(String token) async {
+    final response = await retrieveTokenWithHttpInfo(token);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -285,7 +286,7 @@ class TokensApi {
   ///   The token  Use this in the `X-API-Token` header when using the API.
   ///
   /// * [Token] body (required):
-  Future<Response> userUpdateTokenWithHttpInfo(String token, Token body) async {
+  Future<Response> updateTokenWithHttpInfo(String token, Token body) async {
     // Verify required params are set.
     if (token == null) {
       throw ApiException(
@@ -338,8 +339,8 @@ class TokensApi {
   ///   The token  Use this in the `X-API-Token` header when using the API.
   ///
   /// * [Token] body (required):
-  Future<Token> userUpdateToken(String token, Token body) async {
-    final response = await userUpdateTokenWithHttpInfo(token, body);
+  Future<Token> updateToken(String token, Token body) async {
+    final response = await updateTokenWithHttpInfo(token, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }

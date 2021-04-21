@@ -9,15 +9,15 @@ All URIs are relative to *https://api.lab5e.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userCreateToken**](TokensApi.md#usercreatetoken) | **POST** /user/tokens | Create token
-[**userDeleteToken**](TokensApi.md#userdeletetoken) | **DELETE** /user/tokens/{token} | Remove token
-[**userListTokens**](TokensApi.md#userlisttokens) | **GET** /user/tokens | List tokens
-[**userRetrieveToken**](TokensApi.md#userretrievetoken) | **GET** /user/tokens/{token} | Retrieve token
-[**userUpdateToken**](TokensApi.md#userupdatetoken) | **PATCH** /user/tokens/{token} | Update token
+[**createToken**](TokensApi.md#createtoken) | **POST** /user/tokens | Create token
+[**deleteToken**](TokensApi.md#deletetoken) | **DELETE** /user/tokens/{token} | Remove token
+[**listTokens**](TokensApi.md#listtokens) | **GET** /user/tokens | List tokens
+[**retrieveToken**](TokensApi.md#retrievetoken) | **GET** /user/tokens/{token} | Retrieve token
+[**updateToken**](TokensApi.md#updatetoken) | **PATCH** /user/tokens/{token} | Update token
 
 
-# **userCreateToken**
-> Token userCreateToken(body)
+# **createToken**
+> Token createToken(body)
 
 Create token
 
@@ -33,10 +33,10 @@ final api_instance = TokensApi();
 final body = Token(); // Token | 
 
 try { 
-    final result = api_instance.userCreateToken(body);
+    final result = api_instance.createToken(body);
     print(result);
 } catch (e) {
-    print('Exception when calling TokensApi->userCreateToken: $e\n');
+    print('Exception when calling TokensApi->createToken: $e\n');
 }
 ```
 
@@ -61,8 +61,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userDeleteToken**
-> Object userDeleteToken(token)
+# **deleteToken**
+> DeleteTokenResponse deleteToken(token)
 
 Remove token
 
@@ -78,10 +78,10 @@ final api_instance = TokensApi();
 final token = token_example; // String | The token to delete.
 
 try { 
-    final result = api_instance.userDeleteToken(token);
+    final result = api_instance.deleteToken(token);
     print(result);
 } catch (e) {
-    print('Exception when calling TokensApi->userDeleteToken: $e\n');
+    print('Exception when calling TokensApi->deleteToken: $e\n');
 }
 ```
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**DeleteTokenResponse**](DeleteTokenResponse.md)
 
 ### Authorization
 
@@ -106,8 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userListTokens**
-> TokenList userListTokens()
+# **listTokens**
+> TokenList listTokens()
 
 List tokens
 
@@ -122,10 +122,10 @@ import 'package:userapi/api.dart';
 final api_instance = TokensApi();
 
 try { 
-    final result = api_instance.userListTokens();
+    final result = api_instance.listTokens();
     print(result);
 } catch (e) {
-    print('Exception when calling TokensApi->userListTokens: $e\n');
+    print('Exception when calling TokensApi->listTokens: $e\n');
 }
 ```
 
@@ -147,8 +147,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userRetrieveToken**
-> Token userRetrieveToken(token)
+# **retrieveToken**
+> Token retrieveToken(token)
 
 Retrieve token
 
@@ -164,10 +164,10 @@ final api_instance = TokensApi();
 final token = token_example; // String | 
 
 try { 
-    final result = api_instance.userRetrieveToken(token);
+    final result = api_instance.retrieveToken(token);
     print(result);
 } catch (e) {
-    print('Exception when calling TokensApi->userRetrieveToken: $e\n');
+    print('Exception when calling TokensApi->retrieveToken: $e\n');
 }
 ```
 
@@ -192,8 +192,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userUpdateToken**
-> Token userUpdateToken(token, body)
+# **updateToken**
+> Token updateToken(token, body)
 
 Update token
 
@@ -210,10 +210,10 @@ final token = token_example; // String | The token  Use this in the `X-API-Token
 final body = Token(); // Token | 
 
 try { 
-    final result = api_instance.userUpdateToken(token, body);
+    final result = api_instance.updateToken(token, body);
     print(result);
 } catch (e) {
-    print('Exception when calling TokensApi->userUpdateToken: $e\n');
+    print('Exception when calling TokensApi->updateToken: $e\n');
 }
 ```
 

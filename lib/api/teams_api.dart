@@ -23,8 +23,7 @@ class TeamsApi {
   /// Parameters:
   ///
   /// * [AcceptInviteRequest] body (required):
-  Future<Response> userAcceptInviteWithHttpInfo(
-      AcceptInviteRequest body) async {
+  Future<Response> acceptInviteWithHttpInfo(AcceptInviteRequest body) async {
     // Verify required params are set.
     if (body == null) {
       throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
@@ -71,8 +70,8 @@ class TeamsApi {
   /// Parameters:
   ///
   /// * [AcceptInviteRequest] body (required):
-  Future<Team> userAcceptInvite(AcceptInviteRequest body) async {
-    final response = await userAcceptInviteWithHttpInfo(body);
+  Future<Team> acceptInvite(AcceptInviteRequest body) async {
+    final response = await acceptInviteWithHttpInfo(body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -92,7 +91,7 @@ class TeamsApi {
   /// Parameters:
   ///
   /// * [Team] body (required):
-  Future<Response> userCreateTeamWithHttpInfo(Team body) async {
+  Future<Response> createTeamWithHttpInfo(Team body) async {
     // Verify required params are set.
     if (body == null) {
       throw ApiException(HttpStatus.badRequest, 'Missing required param: body');
@@ -137,8 +136,8 @@ class TeamsApi {
   /// Parameters:
   ///
   /// * [Team] body (required):
-  Future<Team> userCreateTeam(Team body) async {
-    final response = await userCreateTeamWithHttpInfo(body);
+  Future<Team> createTeam(Team body) async {
+    final response = await createTeamWithHttpInfo(body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -164,8 +163,7 @@ class TeamsApi {
   ///
   /// * [String] code (required):
   ///   The invite code.
-  Future<Response> userDeleteInviteWithHttpInfo(
-      String teamId, String code) async {
+  Future<Response> deleteInviteWithHttpInfo(String teamId, String code) async {
     // Verify required params are set.
     if (teamId == null) {
       throw ApiException(
@@ -222,8 +220,8 @@ class TeamsApi {
   ///
   /// * [String] code (required):
   ///   The invite code.
-  Future<Object> userDeleteInvite(String teamId, String code) async {
-    final response = await userDeleteInviteWithHttpInfo(teamId, code);
+  Future<DeleteInviteResponse> deleteInvite(String teamId, String code) async {
+    final response = await deleteInviteWithHttpInfo(teamId, code);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -231,10 +229,11 @@ class TeamsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Object')
-          as Object;
+      return apiClient.deserialize(
+              _decodeBodyBytes(response), 'DeleteInviteResponse')
+          as DeleteInviteResponse;
     }
-    return Future<Object>.value(null);
+    return Future<DeleteInviteResponse>.value(null);
   }
 
   /// Remove member
@@ -250,7 +249,7 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///   The user ID
-  Future<Response> userDeleteMemberWithHttpInfo(
+  Future<Response> deleteMemberWithHttpInfo(
       String teamId, String userId) async {
     // Verify required params are set.
     if (teamId == null) {
@@ -309,8 +308,8 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///   The user ID
-  Future<Member> userDeleteMember(String teamId, String userId) async {
-    final response = await userDeleteMemberWithHttpInfo(teamId, userId);
+  Future<Member> deleteMember(String teamId, String userId) async {
+    final response = await deleteMemberWithHttpInfo(teamId, userId);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -334,7 +333,7 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<Response> userDeleteTeamWithHttpInfo(String teamId) async {
+  Future<Response> deleteTeamWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
       throw ApiException(
@@ -384,8 +383,8 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<Team> userDeleteTeam(String teamId) async {
-    final response = await userDeleteTeamWithHttpInfo(teamId);
+  Future<Team> deleteTeam(String teamId) async {
+    final response = await deleteTeamWithHttpInfo(teamId);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -410,7 +409,7 @@ class TeamsApi {
   ///   The team ID
   ///
   /// * [InviteRequest] body (required):
-  Future<Response> userGenerateInviteWithHttpInfo(
+  Future<Response> generateInviteWithHttpInfo(
       String teamId, InviteRequest body) async {
     // Verify required params are set.
     if (teamId == null) {
@@ -466,8 +465,8 @@ class TeamsApi {
   ///   The team ID
   ///
   /// * [InviteRequest] body (required):
-  Future<Invite> userGenerateInvite(String teamId, InviteRequest body) async {
-    final response = await userGenerateInviteWithHttpInfo(teamId, body);
+  Future<Invite> generateInvite(String teamId, InviteRequest body) async {
+    final response = await generateInviteWithHttpInfo(teamId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -491,7 +490,7 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<Response> userListInvitesWithHttpInfo(String teamId) async {
+  Future<Response> listInvitesWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
       throw ApiException(
@@ -541,8 +540,8 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<InviteList> userListInvites(String teamId) async {
-    final response = await userListInvitesWithHttpInfo(teamId);
+  Future<InviteList> listInvites(String teamId) async {
+    final response = await listInvitesWithHttpInfo(teamId);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -561,7 +560,7 @@ class TeamsApi {
   /// Update the team. You must be an administrator of the team to edit it.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> userListTeamsWithHttpInfo() async {
+  Future<Response> listTeamsWithHttpInfo() async {
     final path = r'/user/teams';
 
     Object postBody;
@@ -599,8 +598,8 @@ class TeamsApi {
   /// List teams
   ///
   /// Update the team. You must be an administrator of the team to edit it.
-  Future<TeamList> userListTeams() async {
-    final response = await userListTeamsWithHttpInfo();
+  Future<TeamList> listTeams() async {
+    final response = await listTeamsWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -627,7 +626,7 @@ class TeamsApi {
   ///
   /// * [String] code (required):
   ///   The invite code.
-  Future<Response> userRetrieveInviteWithHttpInfo(
+  Future<Response> retrieveInviteWithHttpInfo(
       String teamId, String code) async {
     // Verify required params are set.
     if (teamId == null) {
@@ -685,8 +684,8 @@ class TeamsApi {
   ///
   /// * [String] code (required):
   ///   The invite code.
-  Future<Invite> userRetrieveInvite(String teamId, String code) async {
-    final response = await userRetrieveInviteWithHttpInfo(teamId, code);
+  Future<Invite> retrieveInvite(String teamId, String code) async {
+    final response = await retrieveInviteWithHttpInfo(teamId, code);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -711,7 +710,7 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///   The user ID
-  Future<Response> userRetrieveMemberWithHttpInfo(
+  Future<Response> retrieveMemberWithHttpInfo(
       String teamId, String userId) async {
     // Verify required params are set.
     if (teamId == null) {
@@ -768,8 +767,8 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///   The user ID
-  Future<Member> userRetrieveMember(String teamId, String userId) async {
-    final response = await userRetrieveMemberWithHttpInfo(teamId, userId);
+  Future<Member> retrieveMember(String teamId, String userId) async {
+    final response = await retrieveMemberWithHttpInfo(teamId, userId);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -791,7 +790,7 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<Response> userRetrieveTeamWithHttpInfo(String teamId) async {
+  Future<Response> retrieveTeamWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
       throw ApiException(
@@ -839,8 +838,8 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<Team> userRetrieveTeam(String teamId) async {
-    final response = await userRetrieveTeamWithHttpInfo(teamId);
+  Future<Team> retrieveTeam(String teamId) async {
+    final response = await retrieveTeamWithHttpInfo(teamId);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -861,7 +860,7 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<Response> userRetrieveTeamMembersWithHttpInfo(String teamId) async {
+  Future<Response> retrieveTeamMembersWithHttpInfo(String teamId) async {
     // Verify required params are set.
     if (teamId == null) {
       throw ApiException(
@@ -909,8 +908,8 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///   The team ID
-  Future<MemberList> userRetrieveTeamMembers(String teamId) async {
-    final response = await userRetrieveTeamMembersWithHttpInfo(teamId);
+  Future<MemberList> retrieveTeamMembers(String teamId) async {
+    final response = await retrieveTeamMembersWithHttpInfo(teamId);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -937,7 +936,7 @@ class TeamsApi {
   /// * [String] userId (required):
   ///
   /// * [Member] body (required):
-  Future<Response> userUpdateMemberWithHttpInfo(
+  Future<Response> updateMemberWithHttpInfo(
       String teamId, String userId, Member body) async {
     // Verify required params are set.
     if (teamId == null) {
@@ -999,9 +998,8 @@ class TeamsApi {
   /// * [String] userId (required):
   ///
   /// * [Member] body (required):
-  Future<Member> userUpdateMember(
-      String teamId, String userId, Member body) async {
-    final response = await userUpdateMemberWithHttpInfo(teamId, userId, body);
+  Future<Member> updateMember(String teamId, String userId, Member body) async {
+    final response = await updateMemberWithHttpInfo(teamId, userId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }
@@ -1026,7 +1024,7 @@ class TeamsApi {
   /// * [String] teamId (required):
   ///
   /// * [Team] body (required):
-  Future<Response> userUpdateTeamWithHttpInfo(String teamId, Team body) async {
+  Future<Response> updateTeamWithHttpInfo(String teamId, Team body) async {
     // Verify required params are set.
     if (teamId == null) {
       throw ApiException(
@@ -1080,8 +1078,8 @@ class TeamsApi {
   /// * [String] teamId (required):
   ///
   /// * [Team] body (required):
-  Future<Team> userUpdateTeam(String teamId, Team body) async {
-    final response = await userUpdateTeamWithHttpInfo(teamId, body);
+  Future<Team> updateTeam(String teamId, Team body) async {
+    final response = await updateTeamWithHttpInfo(teamId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }

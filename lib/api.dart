@@ -32,6 +32,8 @@ part 'api/teams_api.dart';
 part 'api/tokens_api.dart';
 
 part 'model/accept_invite_request.dart';
+part 'model/delete_invite_response.dart';
+part 'model/delete_token_response.dart';
 part 'model/invite.dart';
 part 'model/invite_list.dart';
 part 'model/invite_request.dart';

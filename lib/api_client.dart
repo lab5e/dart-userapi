@@ -214,6 +214,10 @@ class ApiClient {
           return value is double ? value : double.parse('$value');
         case 'AcceptInviteRequest':
           return AcceptInviteRequest.fromJson(value);
+        case 'DeleteInviteResponse':
+          return DeleteInviteResponse.fromJson(value);
+        case 'DeleteTokenResponse':
+          return DeleteTokenResponse.fromJson(value);
         case 'Invite':
           return Invite.fromJson(value);
         case 'InviteList':

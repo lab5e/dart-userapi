@@ -9,11 +9,11 @@ All URIs are relative to *https://api.lab5e.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userGetUserProfile**](ProfileApi.md#usergetuserprofile) | **GET** /user/profile | Logged in profile
+[**getUserProfile**](ProfileApi.md#getuserprofile) | **GET** /user/profile | Logged in profile
 
 
-# **userGetUserProfile**
-> UserProfile userGetUserProfile()
+# **getUserProfile**
+> UserProfile getUserProfile()
 
 Logged in profile
 
@@ -30,10 +30,10 @@ import 'package:userapi/api.dart';
 final api_instance = ProfileApi();
 
 try { 
-    final result = api_instance.userGetUserProfile();
+    final result = api_instance.getUserProfile();
     print(result);
 } catch (e) {
-    print('Exception when calling ProfileApi->userGetUserProfile: $e\n');
+    print('Exception when calling ProfileApi->getUserProfile: $e\n');
 }
 ```
 

@@ -19,7 +19,7 @@ class ProfileApi {
   /// Show your user profile information
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> userGetUserProfileWithHttpInfo() async {
+  Future<Response> getUserProfileWithHttpInfo() async {
     final path = r'/user/profile';
 
     Object postBody;
@@ -57,8 +57,8 @@ class ProfileApi {
   /// Logged in profile
   ///
   /// Show your user profile information
-  Future<UserProfile> userGetUserProfile() async {
-    final response = await userGetUserProfileWithHttpInfo();
+  Future<UserProfile> getUserProfile() async {
+    final response = await getUserProfileWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
     }

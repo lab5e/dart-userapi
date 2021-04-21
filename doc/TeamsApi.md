@@ -9,24 +9,24 @@ All URIs are relative to *https://api.lab5e.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userAcceptInvite**](TeamsApi.md#useracceptinvite) | **POST** /user/teams/accept | Accept invite
-[**userCreateTeam**](TeamsApi.md#usercreateteam) | **POST** /user/teams | Create team
-[**userDeleteInvite**](TeamsApi.md#userdeleteinvite) | **DELETE** /user/teams/{teamId}/invites/{code} | Delete invite
-[**userDeleteMember**](TeamsApi.md#userdeletemember) | **DELETE** /user/teams/{teamId}/members/{userId} | Remove member
-[**userDeleteTeam**](TeamsApi.md#userdeleteteam) | **DELETE** /user/teams/{teamId} | Remove team
-[**userGenerateInvite**](TeamsApi.md#usergenerateinvite) | **POST** /user/teams/{teamId}/invites | Generate invite
-[**userListInvites**](TeamsApi.md#userlistinvites) | **GET** /user/teams/{teamId}/invites | List invites
-[**userListTeams**](TeamsApi.md#userlistteams) | **GET** /user/teams | List teams
-[**userRetrieveInvite**](TeamsApi.md#userretrieveinvite) | **GET** /user/teams/{teamId}/invites/{code} | Retrieve invite
-[**userRetrieveMember**](TeamsApi.md#userretrievemember) | **GET** /user/teams/{teamId}/members/{userId} | Retrieve member
-[**userRetrieveTeam**](TeamsApi.md#userretrieveteam) | **GET** /user/teams/{teamId} | Retrieve team
-[**userRetrieveTeamMembers**](TeamsApi.md#userretrieveteammembers) | **GET** /user/teams/{teamId}/members | List members
-[**userUpdateMember**](TeamsApi.md#userupdatemember) | **PATCH** /user/teams/{teamId}/members/{userId} | Update member
-[**userUpdateTeam**](TeamsApi.md#userupdateteam) | **PATCH** /user/teams/{teamId} | Update team
+[**acceptInvite**](TeamsApi.md#acceptinvite) | **POST** /user/teams/accept | Accept invite
+[**createTeam**](TeamsApi.md#createteam) | **POST** /user/teams | Create team
+[**deleteInvite**](TeamsApi.md#deleteinvite) | **DELETE** /user/teams/{teamId}/invites/{code} | Delete invite
+[**deleteMember**](TeamsApi.md#deletemember) | **DELETE** /user/teams/{teamId}/members/{userId} | Remove member
+[**deleteTeam**](TeamsApi.md#deleteteam) | **DELETE** /user/teams/{teamId} | Remove team
+[**generateInvite**](TeamsApi.md#generateinvite) | **POST** /user/teams/{teamId}/invites | Generate invite
+[**listInvites**](TeamsApi.md#listinvites) | **GET** /user/teams/{teamId}/invites | List invites
+[**listTeams**](TeamsApi.md#listteams) | **GET** /user/teams | List teams
+[**retrieveInvite**](TeamsApi.md#retrieveinvite) | **GET** /user/teams/{teamId}/invites/{code} | Retrieve invite
+[**retrieveMember**](TeamsApi.md#retrievemember) | **GET** /user/teams/{teamId}/members/{userId} | Retrieve member
+[**retrieveTeam**](TeamsApi.md#retrieveteam) | **GET** /user/teams/{teamId} | Retrieve team
+[**retrieveTeamMembers**](TeamsApi.md#retrieveteammembers) | **GET** /user/teams/{teamId}/members | List members
+[**updateMember**](TeamsApi.md#updatemember) | **PATCH** /user/teams/{teamId}/members/{userId} | Update member
+[**updateTeam**](TeamsApi.md#updateteam) | **PATCH** /user/teams/{teamId} | Update team
 
 
-# **userAcceptInvite**
-> Team userAcceptInvite(body)
+# **acceptInvite**
+> Team acceptInvite(body)
 
 Accept invite
 
@@ -44,10 +44,10 @@ final api_instance = TeamsApi();
 final body = AcceptInviteRequest(); // AcceptInviteRequest | 
 
 try { 
-    final result = api_instance.userAcceptInvite(body);
+    final result = api_instance.acceptInvite(body);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userAcceptInvite: $e\n');
+    print('Exception when calling TeamsApi->acceptInvite: $e\n');
 }
 ```
 
@@ -72,8 +72,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userCreateTeam**
-> Team userCreateTeam(body)
+# **createTeam**
+> Team createTeam(body)
 
 Create team
 
@@ -89,10 +89,10 @@ final api_instance = TeamsApi();
 final body = Team(); // Team | 
 
 try { 
-    final result = api_instance.userCreateTeam(body);
+    final result = api_instance.createTeam(body);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userCreateTeam: $e\n');
+    print('Exception when calling TeamsApi->createTeam: $e\n');
 }
 ```
 
@@ -117,8 +117,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userDeleteInvite**
-> Object userDeleteInvite(teamId, code)
+# **deleteInvite**
+> DeleteInviteResponse deleteInvite(teamId, code)
 
 Delete invite
 
@@ -137,10 +137,10 @@ final teamId = teamId_example; // String | The team ID
 final code = code_example; // String | The invite code.
 
 try { 
-    final result = api_instance.userDeleteInvite(teamId, code);
+    final result = api_instance.deleteInvite(teamId, code);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userDeleteInvite: $e\n');
+    print('Exception when calling TeamsApi->deleteInvite: $e\n');
 }
 ```
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Object**](Object.md)
+[**DeleteInviteResponse**](DeleteInviteResponse.md)
 
 ### Authorization
 
@@ -166,8 +166,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userDeleteMember**
-> Member userDeleteMember(teamId, userId)
+# **deleteMember**
+> Member deleteMember(teamId, userId)
 
 Remove member
 
@@ -186,10 +186,10 @@ final teamId = teamId_example; // String | The team ID
 final userId = userId_example; // String | The user ID
 
 try { 
-    final result = api_instance.userDeleteMember(teamId, userId);
+    final result = api_instance.deleteMember(teamId, userId);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userDeleteMember: $e\n');
+    print('Exception when calling TeamsApi->deleteMember: $e\n');
 }
 ```
 
@@ -215,8 +215,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userDeleteTeam**
-> Team userDeleteTeam(teamId)
+# **deleteTeam**
+> Team deleteTeam(teamId)
 
 Remove team
 
@@ -234,10 +234,10 @@ final api_instance = TeamsApi();
 final teamId = teamId_example; // String | The team ID
 
 try { 
-    final result = api_instance.userDeleteTeam(teamId);
+    final result = api_instance.deleteTeam(teamId);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userDeleteTeam: $e\n');
+    print('Exception when calling TeamsApi->deleteTeam: $e\n');
 }
 ```
 
@@ -262,8 +262,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userGenerateInvite**
-> Invite userGenerateInvite(teamId, body)
+# **generateInvite**
+> Invite generateInvite(teamId, body)
 
 Generate invite
 
@@ -282,10 +282,10 @@ final teamId = teamId_example; // String | The team ID
 final body = InviteRequest(); // InviteRequest | 
 
 try { 
-    final result = api_instance.userGenerateInvite(teamId, body);
+    final result = api_instance.generateInvite(teamId, body);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userGenerateInvite: $e\n');
+    print('Exception when calling TeamsApi->generateInvite: $e\n');
 }
 ```
 
@@ -311,8 +311,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userListInvites**
-> InviteList userListInvites(teamId)
+# **listInvites**
+> InviteList listInvites(teamId)
 
 List invites
 
@@ -330,10 +330,10 @@ final api_instance = TeamsApi();
 final teamId = teamId_example; // String | The team ID
 
 try { 
-    final result = api_instance.userListInvites(teamId);
+    final result = api_instance.listInvites(teamId);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userListInvites: $e\n');
+    print('Exception when calling TeamsApi->listInvites: $e\n');
 }
 ```
 
@@ -358,8 +358,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userListTeams**
-> TeamList userListTeams()
+# **listTeams**
+> TeamList listTeams()
 
 List teams
 
@@ -376,10 +376,10 @@ import 'package:userapi/api.dart';
 final api_instance = TeamsApi();
 
 try { 
-    final result = api_instance.userListTeams();
+    final result = api_instance.listTeams();
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userListTeams: $e\n');
+    print('Exception when calling TeamsApi->listTeams: $e\n');
 }
 ```
 
@@ -401,8 +401,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userRetrieveInvite**
-> Invite userRetrieveInvite(teamId, code)
+# **retrieveInvite**
+> Invite retrieveInvite(teamId, code)
 
 Retrieve invite
 
@@ -421,10 +421,10 @@ final teamId = teamId_example; // String | The team ID
 final code = code_example; // String | The invite code.
 
 try { 
-    final result = api_instance.userRetrieveInvite(teamId, code);
+    final result = api_instance.retrieveInvite(teamId, code);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userRetrieveInvite: $e\n');
+    print('Exception when calling TeamsApi->retrieveInvite: $e\n');
 }
 ```
 
@@ -450,8 +450,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userRetrieveMember**
-> Member userRetrieveMember(teamId, userId)
+# **retrieveMember**
+> Member retrieveMember(teamId, userId)
 
 Retrieve member
 
@@ -468,10 +468,10 @@ final teamId = teamId_example; // String | The team ID
 final userId = userId_example; // String | The user ID
 
 try { 
-    final result = api_instance.userRetrieveMember(teamId, userId);
+    final result = api_instance.retrieveMember(teamId, userId);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userRetrieveMember: $e\n');
+    print('Exception when calling TeamsApi->retrieveMember: $e\n');
 }
 ```
 
@@ -497,8 +497,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userRetrieveTeam**
-> Team userRetrieveTeam(teamId)
+# **retrieveTeam**
+> Team retrieveTeam(teamId)
 
 Retrieve team
 
@@ -514,10 +514,10 @@ final api_instance = TeamsApi();
 final teamId = teamId_example; // String | The team ID
 
 try { 
-    final result = api_instance.userRetrieveTeam(teamId);
+    final result = api_instance.retrieveTeam(teamId);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userRetrieveTeam: $e\n');
+    print('Exception when calling TeamsApi->retrieveTeam: $e\n');
 }
 ```
 
@@ -542,8 +542,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userRetrieveTeamMembers**
-> MemberList userRetrieveTeamMembers(teamId)
+# **retrieveTeamMembers**
+> MemberList retrieveTeamMembers(teamId)
 
 List members
 
@@ -559,10 +559,10 @@ final api_instance = TeamsApi();
 final teamId = teamId_example; // String | The team ID
 
 try { 
-    final result = api_instance.userRetrieveTeamMembers(teamId);
+    final result = api_instance.retrieveTeamMembers(teamId);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userRetrieveTeamMembers: $e\n');
+    print('Exception when calling TeamsApi->retrieveTeamMembers: $e\n');
 }
 ```
 
@@ -587,8 +587,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userUpdateMember**
-> Member userUpdateMember(teamId, userId, body)
+# **updateMember**
+> Member updateMember(teamId, userId, body)
 
 Update member
 
@@ -608,10 +608,10 @@ final userId = userId_example; // String |
 final body = Member(); // Member | 
 
 try { 
-    final result = api_instance.userUpdateMember(teamId, userId, body);
+    final result = api_instance.updateMember(teamId, userId, body);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userUpdateMember: $e\n');
+    print('Exception when calling TeamsApi->updateMember: $e\n');
 }
 ```
 
@@ -638,8 +638,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userUpdateTeam**
-> Team userUpdateTeam(teamId, body)
+# **updateTeam**
+> Team updateTeam(teamId, body)
 
 Update team
 
@@ -658,10 +658,10 @@ final teamId = teamId_example; // String |
 final body = Team(); // Team | 
 
 try { 
-    final result = api_instance.userUpdateTeam(teamId, body);
+    final result = api_instance.updateTeam(teamId, body);
     print(result);
 } catch (e) {
-    print('Exception when calling TeamsApi->userUpdateTeam: $e\n');
+    print('Exception when calling TeamsApi->updateTeam: $e\n');
 }
 ```
 
