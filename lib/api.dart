@@ -47,7 +47,6 @@ part 'model/token.dart';
 part 'model/token_list.dart';
 part 'model/user_profile.dart';
 
-
 const _delimiters = {'csv': ',', 'ssv': ' ', 'tsv': '\t', 'pipes': '|'};
 const _dateEpochMarker = 'epoch';
 final _dateFormatter = DateFormat('yyyy-MM-dd');
