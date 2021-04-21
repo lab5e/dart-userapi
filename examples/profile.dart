@@ -23,7 +23,7 @@ void main(List<String> args) {
   // Get the user profile from the API
   var profileApi = ProfileApi(client);
   profileApi
-      .userGetUserProfile()
+      .getUserProfile()
       .then((value) => displayProfile(value))
       .catchError((error) => print('Got error $error'))
       .whenComplete(() => exit(0));

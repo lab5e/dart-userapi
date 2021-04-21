@@ -23,7 +23,7 @@ void main(List<String> args) {
   // Get the user profile from the API
   var teamsApi = TeamsApi(client);
   teamsApi
-      .userListTeams()
+      .listTeams()
       .then((value) => displayTeamList(value))
       .catchError((error) => print('Got error $error'))
       .whenComplete(() => exit(0));
