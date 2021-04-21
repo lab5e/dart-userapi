@@ -3,7 +3,7 @@
 #
 
 name: 'userapi'
-version: '1.3.6'
+version: '1.3.7'
 description: 'Dart User API Client'
 authors:
   - 'Lab5e Release Bot <releases@lab5e.com>'
