@@ -9,6 +9,7 @@
 
 part of userapi;
 
+
 class ProfileApi {
   ProfileApi([ApiClient apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
@@ -29,18 +30,20 @@ class ProfileApi {
     final formParams = <String, String>{};
 
     final contentTypes = <String>[];
-    final nullableContentType =
-        contentTypes.isNotEmpty ? contentTypes[0] : null;
+    final nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     final authNames = <String>['APIToken'];
 
-    if (nullableContentType != null &&
-        nullableContentType.toLowerCase().startsWith('multipart/form-data')) {
+    if (
+      nullableContentType != null &&
+      nullableContentType.toLowerCase().startsWith('multipart/form-data')
+    ) {
       bool hasFields = false;
       final mp = MultipartRequest(null, null);
       if (hasFields) {
         postBody = mp;
       }
-    } else {}
+    } else {
+    }
 
     return await apiClient.invokeAPI(
       path,
@@ -66,9 +69,8 @@ class ProfileApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body != null && response.statusCode != HttpStatus.noContent) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'UserProfile')
-          as UserProfile;
-    }
+      return apiClient.deserialize(_decodeBodyBytes(response), 'UserProfile') as UserProfile;
+        }
     return Future<UserProfile>.value(null);
   }
 }
