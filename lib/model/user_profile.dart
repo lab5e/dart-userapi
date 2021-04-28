@@ -39,29 +39,32 @@ class UserProfile {
   String logoutUrl;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UserProfile &&
-     other.userId == userId &&
-     other.email == email &&
-     other.avatarUrl == avatarUrl &&
-     other.name == name &&
-     other.profileUrl == profileUrl &&
-     other.githubLogin == githubLogin &&
-     other.provider == provider &&
-     other.logoutUrl == logoutUrl;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserProfile &&
+          other.userId == userId &&
+          other.email == email &&
+          other.avatarUrl == avatarUrl &&
+          other.name == name &&
+          other.profileUrl == profileUrl &&
+          other.githubLogin == githubLogin &&
+          other.provider == provider &&
+          other.logoutUrl == logoutUrl;
 
   @override
   int get hashCode =>
-    (userId == null ? 0 : userId.hashCode) +
-    (email == null ? 0 : email.hashCode) +
-    (avatarUrl == null ? 0 : avatarUrl.hashCode) +
-    (name == null ? 0 : name.hashCode) +
-    (profileUrl == null ? 0 : profileUrl.hashCode) +
-    (githubLogin == null ? 0 : githubLogin.hashCode) +
-    (provider == null ? 0 : provider.hashCode) +
-    (logoutUrl == null ? 0 : logoutUrl.hashCode);
+      (userId == null ? 0 : userId.hashCode) +
+      (email == null ? 0 : email.hashCode) +
+      (avatarUrl == null ? 0 : avatarUrl.hashCode) +
+      (name == null ? 0 : name.hashCode) +
+      (profileUrl == null ? 0 : profileUrl.hashCode) +
+      (githubLogin == null ? 0 : githubLogin.hashCode) +
+      (provider == null ? 0 : provider.hashCode) +
+      (logoutUrl == null ? 0 : logoutUrl.hashCode);
 
   @override
-  String toString() => 'UserProfile[userId=$userId, email=$email, avatarUrl=$avatarUrl, name=$name, profileUrl=$profileUrl, githubLogin=$githubLogin, provider=$provider, logoutUrl=$logoutUrl]';
+  String toString() =>
+      'UserProfile[userId=$userId, email=$email, avatarUrl=$avatarUrl, name=$name, profileUrl=$profileUrl, githubLogin=$githubLogin, provider=$provider, logoutUrl=$logoutUrl]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -95,40 +98,53 @@ class UserProfile {
   /// Returns a new [UserProfile] instance and imports its values from
   /// [json] if it's non-null, null if [json] is null.
   static UserProfile fromJson(Map<String, dynamic> json) => json == null
-    ? null
-    : UserProfile(
-        userId: json[r'userId'],
-        email: json[r'email'],
-        avatarUrl: json[r'avatarUrl'],
-        name: json[r'name'],
-        profileUrl: json[r'profileUrl'],
-        githubLogin: json[r'githubLogin'],
-        provider: json[r'provider'],
-        logoutUrl: json[r'logoutUrl'],
-    );
+      ? null
+      : UserProfile(
+          userId: json[r'userId'],
+          email: json[r'email'],
+          avatarUrl: json[r'avatarUrl'],
+          name: json[r'name'],
+          profileUrl: json[r'profileUrl'],
+          githubLogin: json[r'githubLogin'],
+          provider: json[r'provider'],
+          logoutUrl: json[r'logoutUrl'],
+        );
 
-  static List<UserProfile> listFromJson(List<dynamic> json, {bool emptyIsNull, bool growable,}) =>
-    json == null || json.isEmpty
-      ? true == emptyIsNull ? null : <UserProfile>[]
-      : json.map((v) => UserProfile.fromJson(v)).toList(growable: true == growable);
+  static List<UserProfile> listFromJson(
+    List<dynamic> json, {
+    bool emptyIsNull,
+    bool growable,
+  }) =>
+      json == null || json.isEmpty
+          ? true == emptyIsNull
+              ? null
+              : <UserProfile>[]
+          : json
+              .map((v) => UserProfile.fromJson(v))
+              .toList(growable: true == growable);
 
   static Map<String, UserProfile> mapFromJson(Map<String, dynamic> json) {
     final map = <String, UserProfile>{};
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic v) => map[key] = UserProfile.fromJson(v));
+      json.forEach(
+          (String key, dynamic v) => map[key] = UserProfile.fromJson(v));
     }
     return map;
   }
 
   // maps a json object with a list of UserProfile-objects as value to a dart map
-  static Map<String, List<UserProfile>> mapListFromJson(Map<String, dynamic> json, {bool emptyIsNull, bool growable,}) {
+  static Map<String, List<UserProfile>> mapListFromJson(
+    Map<String, dynamic> json, {
+    bool emptyIsNull,
+    bool growable,
+  }) {
     final map = <String, List<UserProfile>>{};
     if (json != null && json.isNotEmpty) {
       json.forEach((String key, dynamic v) {
-        map[key] = UserProfile.listFromJson(v, emptyIsNull: emptyIsNull, growable: growable);
+        map[key] = UserProfile.listFromJson(v,
+            emptyIsNull: emptyIsNull, growable: growable);
       });
     }
     return map;
   }
 }
-
