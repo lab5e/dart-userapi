@@ -411,8 +411,8 @@ class TeamsApi {
   /// * [String] teamId (required):
   ///   The team ID
   ///
-  /// * [InviteRequest] body (required):
-  Future<Response> generateInviteWithHttpInfo(String teamId, InviteRequest body) async {
+  /// * [RequestInviteDetails] body (required):
+  Future<Response> generateInviteWithHttpInfo(String teamId, RequestInviteDetails body) async {
     // Verify required params are set.
     if (teamId == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
@@ -467,8 +467,8 @@ class TeamsApi {
   /// * [String] teamId (required):
   ///   The team ID
   ///
-  /// * [InviteRequest] body (required):
-  Future<Invite> generateInvite(String teamId, InviteRequest body) async {
+  /// * [RequestInviteDetails] body (required):
+  Future<Invite> generateInvite(String teamId, RequestInviteDetails body) async {
     final response = await generateInviteWithHttpInfo(teamId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -936,8 +936,8 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///
-  /// * [Member] body (required):
-  Future<Response> updateMemberWithHttpInfo(String teamId, String userId, Member body) async {
+  /// * [MemberOfATeam] body (required):
+  Future<Response> updateMemberWithHttpInfo(String teamId, String userId, MemberOfATeam body) async {
     // Verify required params are set.
     if (teamId == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
@@ -997,8 +997,8 @@ class TeamsApi {
   ///
   /// * [String] userId (required):
   ///
-  /// * [Member] body (required):
-  Future<Member> updateMember(String teamId, String userId, Member body) async {
+  /// * [MemberOfATeam] body (required):
+  Future<Member> updateMember(String teamId, String userId, MemberOfATeam body) async {
     final response = await updateMemberWithHttpInfo(teamId, userId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));
@@ -1022,8 +1022,8 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///
-  /// * [Team] body (required):
-  Future<Response> updateTeamWithHttpInfo(String teamId, Team body) async {
+  /// * [ATeam] body (required):
+  Future<Response> updateTeamWithHttpInfo(String teamId, ATeam body) async {
     // Verify required params are set.
     if (teamId == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: teamId');
@@ -1077,8 +1077,8 @@ class TeamsApi {
   ///
   /// * [String] teamId (required):
   ///
-  /// * [Team] body (required):
-  Future<Team> updateTeam(String teamId, Team body) async {
+  /// * [ATeam] body (required):
+  Future<Team> updateTeam(String teamId, ATeam body) async {
     final response = await updateTeamWithHttpInfo(teamId, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

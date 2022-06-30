@@ -279,7 +279,7 @@ import 'package:userapi/api.dart';
 
 final api_instance = TeamsApi();
 final teamId = teamId_example; // String | The team ID
-final body = InviteRequest(); // InviteRequest | 
+final body = RequestInviteDetails(); // RequestInviteDetails | 
 
 try { 
     final result = api_instance.generateInvite(teamId, body);
@@ -294,7 +294,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **String**| The team ID | 
- **body** | [**InviteRequest**](InviteRequest.md)|  | 
+ **body** | [**RequestInviteDetails**](RequestInviteDetails.md)|  | 
 
 ### Return type
 
@@ -605,7 +605,7 @@ import 'package:userapi/api.dart';
 final api_instance = TeamsApi();
 final teamId = teamId_example; // String | 
 final userId = userId_example; // String | 
-final body = Member(); // Member | 
+final body = MemberOfATeam(); // MemberOfATeam | 
 
 try { 
     final result = api_instance.updateMember(teamId, userId, body);
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **String**|  | 
  **userId** | **String**|  | 
- **body** | [**Member**](Member.md)|  | 
+ **body** | [**MemberOfATeam**](MemberOfATeam.md)|  | 
 
 ### Return type
 
@@ -655,7 +655,7 @@ import 'package:userapi/api.dart';
 
 final api_instance = TeamsApi();
 final teamId = teamId_example; // String | 
-final body = Team(); // Team | 
+final body = ATeam(); // ATeam | 
 
 try { 
     final result = api_instance.updateTeam(teamId, body);
@@ -670,7 +670,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **String**|  | 
- **body** | [**Team**](Team.md)|  | 
+ **body** | [**ATeam**](ATeam.md)|  | 
 
 ### Return type
 

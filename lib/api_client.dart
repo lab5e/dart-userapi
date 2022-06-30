@@ -156,8 +156,12 @@ class ApiClient {
           break;
         case 'double':
           return value is double ? value : double.parse('$value');
+        case 'ATeam':
+          return ATeam.fromJson(value);
         case 'AcceptInviteRequest':
           return AcceptInviteRequest.fromJson(value);
+        case 'AnAPIToken':
+          return AnAPIToken.fromJson(value);
         case 'DeleteInviteResponse':
           return DeleteInviteResponse.fromJson(value);
         case 'DeleteTokenResponse':
@@ -166,14 +170,16 @@ class ApiClient {
           return Invite.fromJson(value);
         case 'InviteList':
           return InviteList.fromJson(value);
-        case 'InviteRequest':
-          return InviteRequest.fromJson(value);
         case 'Member':
           return Member.fromJson(value);
         case 'MemberList':
           return MemberList.fromJson(value);
+        case 'MemberOfATeam':
+          return MemberOfATeam.fromJson(value);
         case 'ProtobufAny':
           return ProtobufAny.fromJson(value);
+        case 'RequestInviteDetails':
+          return RequestInviteDetails.fromJson(value);
         case 'RpcStatus':
           return RpcStatus.fromJson(value);
         case 'Team':

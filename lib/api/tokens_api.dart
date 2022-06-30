@@ -287,8 +287,8 @@ class TokensApi {
   /// * [String] token (required):
   ///   The token  Use this in the `X-API-Token` header when using the API.
   ///
-  /// * [Token] body (required):
-  Future<Response> updateTokenWithHttpInfo(String token, Token body) async {
+  /// * [AnAPIToken] body (required):
+  Future<Response> updateTokenWithHttpInfo(String token, AnAPIToken body) async {
     // Verify required params are set.
     if (token == null) {
      throw ApiException(HttpStatus.badRequest, 'Missing required param: token');
@@ -341,8 +341,8 @@ class TokensApi {
   /// * [String] token (required):
   ///   The token  Use this in the `X-API-Token` header when using the API.
   ///
-  /// * [Token] body (required):
-  Future<Token> updateToken(String token, Token body) async {
+  /// * [AnAPIToken] body (required):
+  Future<Token> updateToken(String token, AnAPIToken body) async {
     final response = await updateTokenWithHttpInfo(token, body);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, _decodeBodyBytes(response));

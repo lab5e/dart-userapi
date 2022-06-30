@@ -207,7 +207,7 @@ import 'package:userapi/api.dart';
 
 final api_instance = TokensApi();
 final token = token_example; // String | The token  Use this in the `X-API-Token` header when using the API.
-final body = Token(); // Token | 
+final body = AnAPIToken(); // AnAPIToken | 
 
 try { 
     final result = api_instance.updateToken(token, body);
@@ -222,7 +222,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **String**| The token  Use this in the `X-API-Token` header when using the API. | 
- **body** | [**Token**](Token.md)|  | 
+ **body** | [**AnAPIToken**](AnAPIToken.md)|  | 
 
 ### Return type
 
